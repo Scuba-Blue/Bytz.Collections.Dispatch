@@ -3,3 +3,10 @@ C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Colle
 C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.AssemblyInfoInputs.cache
 C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.AssemblyInfo.cs
 C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.csproj.CoreCompileInputs.cache
+C:\Development\~Github\Bytz.Collections.Dispatch\src\bin\Debug\net7.0\Bytz.Collections.Dispatch.deps.json
+C:\Development\~Github\Bytz.Collections.Dispatch\src\bin\Debug\net7.0\Bytz.Collections.Dispatch.dll
+C:\Development\~Github\Bytz.Collections.Dispatch\src\bin\Debug\net7.0\Bytz.Collections.Dispatch.pdb
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.dll
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\refint\Bytz.Collections.Dispatch.dll
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.pdb
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\ref\Bytz.Collections.Dispatch.dll
