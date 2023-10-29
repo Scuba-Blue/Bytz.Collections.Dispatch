@@ -1,0 +1,5 @@
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.csproj.AssemblyReference.cache
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.AssemblyInfoInputs.cache
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.AssemblyInfo.cs
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0\Bytz.Collections.Dispatch.csproj.CoreCompileInputs.cache
