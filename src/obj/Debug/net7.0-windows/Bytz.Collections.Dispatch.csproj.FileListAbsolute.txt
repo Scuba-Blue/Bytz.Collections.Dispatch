@@ -1,0 +1,12 @@
+C:\Development\~Github\Bytz.Collections.Dispatch\src\bin\Debug\net7.0-windows\Bytz.Collections.Dispatch.deps.json
+C:\Development\~Github\Bytz.Collections.Dispatch\src\bin\Debug\net7.0-windows\Bytz.Collections.Dispatch.dll
+C:\Development\~Github\Bytz.Collections.Dispatch\src\bin\Debug\net7.0-windows\Bytz.Collections.Dispatch.pdb
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.csproj.AssemblyReference.cache
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.AssemblyInfoInputs.cache
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.AssemblyInfo.cs
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.csproj.CoreCompileInputs.cache
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.dll
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\refint\Bytz.Collections.Dispatch.dll
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\Bytz.Collections.Dispatch.pdb
+C:\Development\~Github\Bytz.Collections.Dispatch\src\obj\Debug\net7.0-windows\ref\Bytz.Collections.Dispatch.dll

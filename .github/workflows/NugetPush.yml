@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 env:
-  solution: ./Bytz.Extensions.DependencyInjection.sln
-  packageDir: ./Bytz.Extensions.DependencyInjection/pkgs
+  solution: ./Bytz.Collections.Dispatch.sln
+  packageDir: ./Bytz.Collections.Dispatch/pkgs
 
 jobs:
   build:
