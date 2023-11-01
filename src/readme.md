@@ -1,4 +1,4 @@
-![.NET](https://github.com/Scuba-Blue/Bitz.Extensions.DependencyInjection/workflows/.NET/badge.svg)
+![.NET](https://github.com/Scuba-Blue/Bytz.Collections.Dispatch/workflows/.NET/badge.svg)
 
 # Bytz.Collections.Dispatch
 
