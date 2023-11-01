@@ -14,7 +14,7 @@ jobs:
   build:
     env:
       buildVersion: '7.0.${{github.run_number}}'
-      nugetAuthToken: ${{ secrets.BYTZ_LIBRARIES }}
+      nugetAuthToken: ${{ bytz.collections.dispatch }}
     
     runs-on: ubuntu-latest
 
