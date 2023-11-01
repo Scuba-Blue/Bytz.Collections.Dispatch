@@ -1,4 +1,4 @@
-![.NET](https://github.com/Scuba-Blue/Bytz.Collections.Dispatch/workflows/.NET/badge.svg)
+[![.NET](https://github.com/Scuba-Blue/Bytz.Collections.Dispatch/actions/workflows/NugetPush.yml/badge.svg)](https://github.com/Scuba-Blue/Bytz.Collections.Dispatch/actions/workflows/NugetPush.yml)
 
 # Bytz.Collections.Dispatch
 
