@@ -6,7 +6,7 @@ on:
     paths:
     - 'netfusion/**'
 env:
-  solution: ./netfusion/NetFusion.sln
+    solution: ./Bytz.Collections.Dispatch.sln
 
 jobs:
   build:
