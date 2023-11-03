@@ -1,14 +1,12 @@
-name: NugetPush
+name: Master Build & Publish
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    branches: [ master ]
+    paths:
+    - 'netfusion/**'
 env:
-  solution: ./Bytz.Collections.Dispatch.sln
-  packageDir: ./Bytz.Collections.Dispatch/pkgs
+  solution: ./netfusion/NetFusion.sln
 
 jobs:
   build:
@@ -24,20 +22,17 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 7.0.200
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+    - name: Print Variables
+      run: echo $buildVersion
+    - name: Restore Dependencies
+      run: dotnet restore $solution
+    - name: Build for Test
+      run: dotnet build --no-restore --version-suffix $buildVersion $solution
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-
+      run: dotnet test --no-build --verbosity normal $solution
     - name: Build for Release
       run: dotnet build --no-restore -c Release --version-suffix $buildVersion $solution
-    
     - name: Package Assemblies
       run: dotnet pack --no-build $solution -p:PackageVersion=$buildVersion
-      
     - name: Push Packages to Repository
-      run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k $nugetAuthToken --skip-duplicate $packageDir/**/*.nupkg
-      
-
+      run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k $nugetAuthToken --skip-duplicate ./**/NetFusion.*.nupkg
