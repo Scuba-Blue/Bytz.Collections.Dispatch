@@ -38,6 +38,6 @@ jobs:
       run: dotnet pack --no-build $solution -p:PackageVersion=$buildVersion
       
     - name: Push Packages to Repository
-      run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k $nugetAuthToken --skip-duplicate ./**/Bytz.Collections.Dispatch.*.nupkg
+      run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k $nugetAuthToken --skip-duplicate ./**/Bytz.Collections.Dispatch.*.*.*.nupkg
       
 
