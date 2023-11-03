@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  solution: ./Bytz.Collections.Dispatch.sln
+  solution: ./Bytz.Collections.Dispatch.csproj
   packageDir: ./Bytz.Collections.Dispatch/pkgs
 
 jobs:
