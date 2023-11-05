@@ -6,7 +6,6 @@ namespace Bytz.Collections.Dispatch.Actions;
 /// action list taking 1 parameter.
 /// </summary>
 /// <typeparam name="T1">parameter 1</typeparam>
-/// <typeparam name="TReturn">type of the return from the function</typeparam>
 public class ActionList<T1>
 : Dictionary<Func<T1, bool>, Action<T1>>, IActionDispatch
 {
@@ -28,7 +27,7 @@ public class ActionList<T1>
     /// get a single entry based on the input.
     /// </summary>
     /// <param name="p1">parameter 1</param>
-    /// <returns>related element for parameter</returns>
+    /// <returns>related element or null</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
     public Action<T1> Single
     (
@@ -42,7 +41,7 @@ public class ActionList<T1>
     /// get a single entry based on the input or null if not found.
     /// </summary>
     /// <param name="p1">parameter 1</param>
-    /// <returns>related element for parameter</returns>
+    /// <returns>related element or null</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
     public Action<T1> SingleOrDefault
     (
@@ -69,7 +68,7 @@ public class ActionList<T1>
     /// <summary>
     /// call the identified method with the specified input.
     /// </summary>
-    /// <param name="p1">parameter 1</param>k
+    /// <param name="p1">parameter 1</param>
     /// <param name="default">default to call if no match found</param>
     /// <returns>result from calling the identified function</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
@@ -89,7 +88,7 @@ public class ActionList<T1>
     /// <returns>index for the matching element</returns>
     /// <exception cref="InvalidOperationException">Sequence contains no elements.  When no match for the parameter(s) is found.</exception>
     /// <remarks>
-    /// the dictionary does not inately provide an index base off-of a key.  this method
+    /// the dictionary does not inherently provide an index base off-of a key.  this method
     /// approximates the position by using the enumerable.select overload that provides
     /// this.  for static lists i expect that this should always consistent.
     /// </remarks>
@@ -109,7 +108,7 @@ public class ActionList<T1>
     }
 
     /// <summary>
-    /// calls all actions that match the current state of p1
+    /// calls all actions that match the current state of the parameter(s)
     /// </summary>
     /// <param name="p1">paramter 1</param>
     public void CallAll
@@ -134,7 +133,7 @@ public class ActionList<T1>
     }
 
     /// <summary>
-    /// calls all actions that match the current state of p1
+    /// calls all actions that match the current state of the parameter(s)
     /// </summary>
     /// <param name="p1">paramter 1</param>
     /// <param name="default">default action to call if no match found.</param>
@@ -159,8 +158,9 @@ public class ActionList<T1>
     /// count the number of conditions that match the state of the parameter(s)
     /// </summary>
     /// <param name="p1"></param>
-    /// <returns>count of items in the list.</returns>
-    public new int Count
+    /// <returns>count of items that match the state of the parameter(s).</returns>
+    [Obsolete("use count-of")]
+    public int CountFor
     (
         T1 p1
     )

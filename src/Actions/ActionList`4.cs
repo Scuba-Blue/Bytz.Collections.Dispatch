@@ -3,13 +3,12 @@
 namespace Bytz.Collections.Dispatch.Actions;
 
 /// <summary>
-/// action list taking 4 parameters.
+/// action list taking 4 parameter(s).
 /// </summary>
 /// <typeparam name="T1">parameter 1</typeparam>
 /// <typeparam name="T2">parameter 2</typeparam>
 /// <typeparam name="T3">parameter 3</typeparam>
 /// <typeparam name="T4">parameter 4</typeparam>
-/// <typeparam name="TReturn">type of the return from the function</typeparam>
 public class ActionList<T1, T2, T3, T4>
 : Dictionary<Func<T1, T2, T3, T4, bool>, Action<T1, T2, T3, T4>>, IActionDispatch
 {
@@ -34,7 +33,7 @@ public class ActionList<T1, T2, T3, T4>
     /// <param name="p2">parameter 2</param>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
-    /// <returns>related element for parameter</returns>
+    /// <returns>related element or null</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
     public Action<T1, T2, T3, T4> Single
     (
@@ -54,7 +53,7 @@ public class ActionList<T1, T2, T3, T4>
     /// <param name="p2">parameter 2</param>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
-    /// <returns>related element for parameter</returns>
+    /// <returns>related element or null</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
     public Action<T1, T2, T3, T4> SingleOrDefault
     (
@@ -90,7 +89,7 @@ public class ActionList<T1, T2, T3, T4>
     /// <summary>
     /// call the identified method with the specified input.
     /// </summary>
-    /// <param name="p1">parameter 1</param>k
+    /// <param name="p1">parameter 1</param>
     /// <param name="p2">parameter 2</param>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
@@ -119,7 +118,7 @@ public class ActionList<T1, T2, T3, T4>
     /// <returns>index for the matching element</returns>
     /// <exception cref="InvalidOperationException">Sequence contains no elements.  When no match for the parameter(s) is found.</exception>
     /// <remarks>
-    /// the dictionary does not inately provide an index base off-of a key.  this method
+    /// the dictionary does not inherently provide an index base off-of a key.  this method
     /// approximates the position by using the enumerable.select overload that provides
     /// this.  for static lists i expect that this should always consistent.
     /// </remarks>
@@ -142,7 +141,7 @@ public class ActionList<T1, T2, T3, T4>
     }
 
     /// <summary>
-    /// calls all actions that match the current state of p1
+    /// calls all actions that match the current state of the parameter(s)
     /// </summary>
     /// <param name="p1">paramter 1</param>
     /// <param name="p2">parameter 2</param>
@@ -179,7 +178,7 @@ public class ActionList<T1, T2, T3, T4>
     }
 
     /// <summary>
-    /// calls all actions that match the current state of p1
+    /// calls all actions that match the current state of the parameter(s)
     /// </summary>
     /// <param name="p1">paramter 1</param>
     /// <param name="p2">parameter 2</param>
@@ -210,12 +209,32 @@ public class ActionList<T1, T2, T3, T4>
     /// <summary>
     /// count the number of conditions that match the state of the parameter(s)
     /// </summary>
-    /// <param name="p2">parameter 1</param>
+    /// <param name="p1">parameter 1</param>
     /// <param name="p2">parameter 2</param>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
-    /// <returns>count of items in the list.</returns>
-    public new int Count
+    /// <returns>count of items that match the state of the parameter(s).</returns>
+    [Obsolete("use count-of")]
+    public int CountFor
+    (
+        T1 p1,
+        T2 p2,
+        T3 p3,
+        T4 p4
+    )
+    {
+        return this.Count(k => k.Key(p1, p2, p3, p4));
+    }
+
+    /// <summary>
+    /// count the number of conditions that match the state of the parameter(s)
+    /// </summary>
+    /// <param name="p1">parameter 1</param>
+    /// <param name="p2">parameter 2</param>
+    /// <param name="p3">parameter 3</param>
+    /// <param name="p4">parameter 4</param>
+    /// <returns>count of items that match the state of the parameter(s).</returns>
+    public int CountOf
     (
         T1 p1,
         T2 p2,

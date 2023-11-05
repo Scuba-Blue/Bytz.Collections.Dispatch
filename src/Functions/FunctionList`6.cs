@@ -3,7 +3,7 @@
 namespace Bytz.Collections.Dispatch.Functions;
 
 /// <summary>
-/// function list taking 5 parameters.
+/// function list taking 5 parameter(s).
 /// </summary>
 /// <typeparam name="T1">parameter 1</typeparam>
 /// <typeparam name="T2">parameter 2</typeparam>
@@ -36,7 +36,7 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
     /// <param name="p5">parameter 5</param>
-    /// <returns>related element for parameter</returns>
+    /// <returns>related element or null</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
     public Func<T1, T2, T3, T4, T5, TReturn> Single
     (
@@ -58,7 +58,7 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
     /// <param name="p5">parameter 5</param>
-    /// <returns>related element for parameter</returns>
+    /// <returns>related element or null</returns>
     /// <exception cref="InvalidOperationException">if the same criteria for the key has been defined more than once.</exception>
     public Func<T1, T2, T3, T4, T5, TReturn> SingleOrDefault
     (
@@ -129,7 +129,7 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     /// <returns>index for the matching element</returns>
     /// <exception cref="InvalidOperationException">Sequence contains no elements.  When no match for the parameter(s) is found.</exception>
     /// <remarks>
-    /// the dictionary does not inately provide an index base off-of a key.  this method
+    /// the dictionary does not inherently provide an index base off-of a key.  this method
     /// approximates the position by using the enumerable.select overload that provides
     /// this.  for static lists i expect that this should always consistent.
     /// </remarks>
@@ -153,13 +153,25 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     }
 
     /// <summary>
-    /// calls all actions that match the current state of p1
+    /// calls all actions that match the current state of the parameter(s)
     /// </summary>
     /// <param name="p1">paramter 1</param>
     /// <param name="p2">parameter 2</param>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
     /// <param name="p5">parameter 5</param>
+    /// <remarks>
+    /// i think that I want to return the product of all function calls but this poses a problem that i am 
+    /// uncertain of how to handle or of the value provided since it will be tightly-coupled to the ordinal execution:  
+    /// this feels like it would introduce code-smell.
+    /// 
+    ///     ordering    - while i guess it should be easy to return the results in order of execution, i am uncertain 
+    ///                 - of the reliability of this. (see remarks for IndexOf)
+    ///     chaining    - it MAY be possible to use the results of a function to a successive call, i am not certain how to attain this yet. 
+    ///                 - i need to think on this.  likely not possible (or overly complicated to implement) with the number of variations.
+    ///
+    ///     any input/thoughts/insights are appreciated.
+    /// </remarks>
     public void CallAll
     (
         T1 p1,
@@ -169,7 +181,7 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
         T5 p5
     )
     {
-        this.Where(p1, p2, p3, p4, p5).ToList().ForEach(a => a(p1, p2, p3, p4, p5));
+        this.Where(p1, p2, p3, p4, p5).ToList().ForEach(f => f(p1, p2, p3, p4, p5));
     }
 
     /// <summary>
@@ -194,7 +206,7 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     }
 
     /// <summary>
-    /// calls all actions that match the current state of p1
+    /// calls all actions that match the current state of the parameter(s)
     /// </summary>
     /// <param name="p1">paramter 1</param>
     /// <param name="p2">parameter 2</param>
@@ -202,6 +214,18 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     /// <param name="p4">parameter 4</param>
     /// <param name="p5">parameter 5</param>
     /// <param name="default">default to call if no match found</param>
+    /// <remarks>
+    /// i think that I want to return the product of all function calls but this poses a problem that i am 
+    /// uncertain of how to handle or of the value provided since it will be tightly-coupled to the ordinal execution:  
+    /// this feels like it would introduce code-smell.
+    /// 
+    ///     ordering    - while i guess it should be easy to return the results in order of execution, i am uncertain 
+    ///                 - of the reliability of this. (see remarks for IndexOf)
+    ///     chaining    - it MAY be possible to use the results of a function to a successive call, i am not certain how to attain this yet. 
+    ///                 - i need to think on this.  likely not possible (or overly complicated to implement) with the number of variations.
+    ///
+    ///     any input/thoughts/insights are appreciated.
+    /// </remarks>
     public void CallAll
     (
         T1 p1,
@@ -212,15 +236,15 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
         Func<T1, T2, T3, T4, T5, TReturn> @default
     )
     {
-        IEnumerable<Func<T1, T2, T3, T4, T5, TReturn>> actions = Where(p1, p2, p3, p4, p5);
+        IEnumerable<Func<T1, T2, T3, T4, T5, TReturn>> functions = Where(p1, p2, p3, p4, p5);
 
-        if (actions.Any() == false)
+        if (functions.Any() == false)
         {
             @default(p1, p2, p3, p4, p5);
             return;
         }
 
-        actions.ToList().ForEach(a => a(p1, p2, p3, p4, p5));
+        functions.ToList().ForEach(f => f(p1, p2, p3, p4, p5));
     }
 
     /// <summary>
@@ -231,8 +255,30 @@ public class FunctionList<T1, T2, T3, T4, T5, TReturn>
     /// <param name="p3">parameter 3</param>
     /// <param name="p4">parameter 4</param>
     /// <param name="p5">parameter 5</param>
-    /// <returns>count of items in the list.</returns>
-    public new int Count
+    /// <returns>count of items that match the state of the parameter(s).</returns>
+    [Obsolete("use count-of")]
+    public int CountFor
+    (
+        T1 p1,
+        T2 p2,
+        T3 p3,
+        T4 p4,
+        T5 p5
+    )
+    {
+        return this.Count(k => k.Key(p1, p2, p3, p4, p5));
+    }
+
+    /// <summary>
+    /// count the number of conditions that match the state of the parameter(s)
+    /// </summary>
+    /// <param name="p1">paramter 1</param>
+    /// <param name="p2">parameter 2</param>
+    /// <param name="p3">parameter 3</param>
+    /// <param name="p4">parameter 4</param>
+    /// <param name="p5">parameter 5</param>
+    /// <returns>count of items that match the state of the parameter(s).</returns>
+    public int CountOf
     (
         T1 p1,
         T2 p2,
