@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\src",
+    "\\src\\Functions"
+  ],
+  "SelectedNode": "\\src\\Bytz.Collections.Dispatch.csproj",
+  "PreviewInSolutionExplorer": false
+}
