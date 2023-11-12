@@ -27,17 +27,17 @@ A simple example of a calculation involving customer discounts follows is as fol
 
 ### Implementation as If-Then-Else
 
-![Alt text](image-1.png)
+![Alt text](./img/image-1.png)
 
  ### Implementation within a Dispatch Function-List
  
-![Alt text](image-2.png)
+![Alt text](./img/image-2.png)
 ### Calling of the Dispatch Function-List
 A fairly simple example of calling a dispatch list of functions could be where a customer is checking-out to calculate a discount for the current order.
 
-![Alt text](image-4.png)
+![Alt text](./img/image-4.png)
 
 ### Testing
 
 Since the "rules" are defined in a FunctionList, we can validate that our indexes are as expectd by testing with various inputs.
-![Alt text](image-3.png)
+![Alt text](./img/image-3.png)
