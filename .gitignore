@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Tests.Bytz.Collections.Dispatch/bin/Release/net7.0
+/Tests.Bytz.Collections.Dispatch/bin/Release/net8.0
+/Tests.Bytz.Collections.Dispatch/obj
