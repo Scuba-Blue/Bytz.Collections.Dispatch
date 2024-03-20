@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.34221.33
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bytz.Collections.Dispatch", "src\Bytz.Collections.Dispatch.csproj", "{409228D1-6F8C-4A84-8ACB-5A49B9F4435E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bytz.Collections.Dispatch", "Bytz.Collections.Dispatch\Bytz.Collections.Dispatch.csproj", "{19E9426C-746A-45CE-BA07-CCCA3FD526FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{9C325E93-3BAD-4FC5-B180-9ABC17D65E5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{142DFB9A-26DB-46CC-BCFE-61133337CA8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Bytz.Collections.Dispatch", "Tests.Bytz.Collections.Dispatch\Tests.Bytz.Collections.Dispatch.csproj", "{546F226F-F757-4B58-A3C6-DE8AB092C33A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +17,37 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{409228D1-6F8C-4A84-8ACB-5A49B9F4435E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{409228D1-6F8C-4A84-8ACB-5A49B9F4435E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{409228D1-6F8C-4A84-8ACB-5A49B9F4435E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{409228D1-6F8C-4A84-8ACB-5A49B9F4435E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19E9426C-746A-45CE-BA07-CCCA3FD526FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19E9426C-746A-45CE-BA07-CCCA3FD526FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19E9426C-746A-45CE-BA07-CCCA3FD526FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19E9426C-746A-45CE-BA07-CCCA3FD526FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546F226F-F757-4B58-A3C6-DE8AB092C33A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546F226F-F757-4B58-A3C6-DE8AB092C33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546F226F-F757-4B58-A3C6-DE8AB092C33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546F226F-F757-4B58-A3C6-DE8AB092C33A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19E9426C-746A-45CE-BA07-CCCA3FD526FF} = {9C325E93-3BAD-4FC5-B180-9ABC17D65E5C}
+		{546F226F-F757-4B58-A3C6-DE8AB092C33A} = {142DFB9A-26DB-46CC-BCFE-61133337CA8E}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D13011AC-F53A-4ABC-BA5E-9C297F44AD0E}
+		SolutionGuid = {62B845A8-25CA-4C9E-9810-185FA5CA248C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hephaestus/bytz
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Bytz.Collections.Dispatch\\Bytz.Collections.Dispatch.csproj
+		SccProjectTopLevelParentUniqueName1 = Bytz.Collections.Dispatch.sln
+		SccProjectName1 = Bytz.Collections.Dispatch
+		SccLocalPath1 = Bytz.Collections.Dispatch
+		SccProjectUniqueName2 = Tests.Bytz.Collections.Dispatch\\Tests.Bytz.Collections.Dispatch.csproj
+		SccProjectTopLevelParentUniqueName2 = Bytz.Collections.Dispatch.sln
+		SccProjectName2 = Tests.Bytz.Collections.Dispatch
+		SccLocalPath2 = Tests.Bytz.Collections.Dispatch
 	EndGlobalSection
 EndGlobal
