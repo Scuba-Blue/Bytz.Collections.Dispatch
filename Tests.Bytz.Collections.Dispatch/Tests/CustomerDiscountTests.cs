@@ -1,5 +1,4 @@
-﻿using Tests.Bytz.Collections.Dispatch.Entities;
-using Tests.Bytz.Collections.Dispatch.FunctionList;
+﻿using Tests.Bytz.Collections.Dispatch.Examples.Rules.Functions;
 using Tests.Bytz.Collections.Dispatch.Tests.Basis;
 
 namespace Tests.Bytz.Collections.Dispatch.Tests;

@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/Scuba-Blue/Bytz.Collections.Dispatch</RepositoryUrl>
+    <VersionPrefix>1.8.0</VersionPrefix>
+    <Title>Branchless Coding Predicate Lists</Title>
+    <Description>Define If-Then-Else Conditions with Lambdas and Allows Simple Unit-Testing.</Description>
+    <PackageProjectUrl>https://github.com/Scuba-Blue/Bytz.Collections.Dispatch</PackageProjectUrl>
+    <Authors>M. Douglas Bowan II</Authors>
+    <Copyright>M. Douglas Bowan II</Copyright>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>dispatch;branchless;boolean;logic;lambda;linq;</PackageTags>
+    <PackageReleaseNotes>upgrading to .NET 10 - no functional changes.</PackageReleaseNotes>
+    <AssemblyVersion>2.10.0.0</AssemblyVersion>
+    <FileVersion>2.10.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Documentation\**" />
+    <EmbeddedResource Remove="Documentation\**" />
+    <None Remove="Documentation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Bytz.Collections.Dispatch.csproj.vspscc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\~Github\Bytz.Extensions.DependencyInjection\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

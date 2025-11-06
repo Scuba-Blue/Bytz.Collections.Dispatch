@@ -1,5 +1,4 @@
-﻿using Tests.Bytz.Collections.Dispatch.Entities;
-using Tests.Bytz.Collections.Dispatch.FunctionList;
+﻿using Tests.Bytz.Collections.Dispatch.Examples.Rules.Functions;
 using Tests.Bytz.Collections.Dispatch.Tests.Basis;
 
 namespace Tests.Bytz.Collections.Dispatch.Tests;
@@ -22,7 +21,7 @@ public class IndexOfTests
     }
 
     //   a test without a specific match will throw an exception.
-    [Fact] 
+    [Fact]
     public void IndexOf_NoMatch_Throws_InvalidOperationException()
     {
         Assert.Throws<InvalidOperationException>
